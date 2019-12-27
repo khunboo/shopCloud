@@ -1,0 +1,22 @@
+server:
+  port: 9500
+  servlet:
+    context-path: /shop/registry-center
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}${server.servlet.context-path}/eureka/
+  server:
+    enable-self-preservation: false #关闭自我保护模式
+    eviction-interval-timer-in-ms: 6000 #eureka server清理无效节点的时间间隔
+
+
+spring:
+  application:
+    name: shop-eureka-server
