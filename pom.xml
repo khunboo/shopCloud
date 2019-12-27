@@ -32,7 +32,7 @@
         <sqlserver.version>4.0</sqlserver.version>
         <commons.lang.version>3.7</commons.lang.version>
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
-        <commons.fileupload.version>1.3.1</commons.fileupload.version>
+        <commons.fileupload.version>1.3.3</commons.fileupload.version>
         <commons.io.version>2.5</commons.io.version>
         <commons.codec.version>1.10</commons.codec.version>
         <guava.version>20.0</guava.version>
