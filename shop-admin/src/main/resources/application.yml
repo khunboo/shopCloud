@@ -1,0 +1,43 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 9200
+  connection-timeout: 5000
+  servlet:
+    context-path: ${shop.context-path}admin
+    session:
+      cookie:
+        http-only: true
+
+spring:
+  application:
+    name: shop-admin
+  main:
+    banner-mode: 'off'
+    allow-bean-definition-overriding: true
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  activiti:
+    check-process-definitions: false
+
+shop:
+  redis-open: true
+  context-path: /shop/
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9500/shop/registry-center/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15 #表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance，该值默认为90秒。
+    lease-renewal-interval-in-seconds: 5 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒
