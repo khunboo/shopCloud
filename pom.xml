@@ -19,6 +19,7 @@
     <modules>
         <module>shop-eureka-server</module>
         <module>shop-admin</module>
+        <module>shop-common</module>
     </modules>
 
     <properties>
