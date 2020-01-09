@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan(basePackages = {"com.khunboo"})
 public class AdminApplication {
 
     public static void main(String[] args){

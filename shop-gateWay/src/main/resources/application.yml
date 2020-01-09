@@ -1,0 +1,17 @@
+server:
+  port: 9300
+
+spring:
+  application:
+    name: shop-gateway
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5 #表示eureka client间隔多久去拉取服务注册信息，默认为30秒，对于api-gateway，如果要迅速获取服务注册状态，可以缩小该值，比如5秒
+    service-url:
+      defaultZone: http://localhost:9500/shop/registry-center/eureka
+  instance:
+    lease-expiration-duration-in-seconds: 15 #表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance，该值默认为90秒。
+    lease-renewal-interval-in-seconds: 5 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒

@@ -27,7 +27,6 @@ spring:
       enabled: true
   activiti:
     check-process-definitions: false
-
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver

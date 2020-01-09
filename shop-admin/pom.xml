@@ -14,6 +14,12 @@
     <version>1.0.0-SNAPSHOT</version>
     <description>后台权限管理模块</description>
 
+    <properties>
+        <druid.version>1.1.10</druid.version>
+        <mybatisplus.version>3.1.0</mybatisplus.version>
+        <mysql.version>8.0.11</mysql.version>
+    </properties>
+
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -25,6 +31,28 @@
                 <groupId>com.khunboo</groupId>
                 <artifactId>shop-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.baomidou</groupId>
+                        <artifactId>mybatis-plus-generator</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
 </project>
