@@ -13,13 +13,22 @@ public class Result implements Serializable {
 
     }
 
-    public Result(String code, String msg, Object data){
+    public Result(int code, String msg, Object data){
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
-    private String code;
+    public Result success(){
+
+        return new Result(200, null, null);
+    }
+
+    public Result error(){
+        return new Result(500, "服务器异常", null);
+    }
+
+    private int code;
     private String msg;
     private Object data;
 }
