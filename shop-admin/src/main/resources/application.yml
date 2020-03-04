@@ -11,6 +11,9 @@ server:
       cookie:
         http-only: true
 
+manage:
+  passwordSalt: duanmu
+
 spring:
   application:
     name: shop-admin

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.khunboo.modules.dao">
+    <resultMap id="SysUserLogin" type="com.khunboo.modules.entity.SysUserEntity">
+        <id column="id" property="id"/>
+        <result property="account" column="account"/>
+        <result property="password" column="password"/>
+        <result property="status" column="status"/>
+        <result property="creater" column="creater"/>
+        <result property="createDate" column="create_date"/>
+        <result property="updater" column="updater"/>
+        <result property="updateDate" column="update_date"/>
+    </resultMap>
+    <select id="getSelectByAccount" resultMap="SysUserLogin">
+        select id,account,password,status,creater,create_date,updater,update_date from sys_user
+        where account = #{account}
+    </select>
+
+    <insert id="save" parameterType="com.khunboo.dto.LoginDto">
+        insert into sys_user
+        (username,
+         password,
+         status,
+         creater,
+         create_date,
+         updater,
+         update_date)
+        values
+        (#{username},
+         #{password},
+         #{status},
+         #{creater},
+         #{createTime},
+         #{updater},
+         #{updateTime}
+         )
+
+    </insert>
+</mapper>
