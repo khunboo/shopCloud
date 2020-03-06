@@ -1,7 +1,7 @@
 package com.khunboo.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.khunboo.utils.Result;
+import com.khunboo.Result;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.core.Ordered;

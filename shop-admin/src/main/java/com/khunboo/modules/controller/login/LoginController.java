@@ -20,8 +20,6 @@ public class LoginController {
     @RequestMapping("/login")
     public Result login(@Valid @RequestBody LoginDto login){
 
-
-
         return new Result(200, "登录成功", null);
     }
 
