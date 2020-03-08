@@ -7,6 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
  * 基础dao
  * @param <T>
  */
-@Mapper
 public interface BaseDao<T> extends BaseMapper<T> {
 }

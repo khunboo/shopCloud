@@ -23,8 +23,8 @@ public class SysUserImpl extends BaseServiceImpl<SysUserDao, SysUserEntity> impl
 
         String allTime = DateUtils.getAllTime();
         //判断账号是否重复
-        String account = dto.getUsername();
-        SysUserEntity sysUserEntity = sysUserDao.getSelectByAccount(account);
+        String username = dto.getUsername();
+        SysUserEntity sysUserEntity = sysUserDao.getSelectByAccount(username);
         if(sysUserEntity != null) {
             throw new SysException(500, "对不起，您所创建的账号已存在！！！");
         }
