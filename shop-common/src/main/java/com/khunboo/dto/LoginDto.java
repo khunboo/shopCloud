@@ -47,5 +47,10 @@ public class LoginDto implements Serializable {
      */
     private String updateTime;
 
+    /**
+     * 加密盐
+     */
+    private String salt;
+
 
 }

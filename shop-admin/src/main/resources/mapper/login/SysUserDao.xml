@@ -11,10 +11,11 @@
         <result property="createDate" column="create_date"/>
         <result property="updater" column="updater"/>
         <result property="updateDate" column="update_date"/>
+        <result property="salt" column="salt"/>
     </resultMap>
 
     <select id="getSelectByAccount" resultMap="sysUserLogin">
-        select id,username,password,status,creater,create_date,updater,update_date from sys_user
+        select id,username,password,status,creater,create_date,updater,update_date,salt from sys_user
         where username = #{username}
     </select>
 
@@ -26,7 +27,8 @@
          creater,
          create_date,
          updater,
-         update_date)
+         update_date,
+         salt)
         values
         (#{username},
          #{password},
@@ -34,7 +36,8 @@
          #{creater},
          #{createTime},
          #{updater},
-         #{updateTime}
+         #{updateTime},
+         #{salt}
          )
 
     </insert>

@@ -52,4 +52,9 @@ public class SysUserEntity implements Serializable {
      * 更新时间
      */
     public String updateDate;
+
+    /**
+     * 加密盐
+     */
+    public String salt;
 }
