@@ -1,6 +1,7 @@
 package com.khunboo.modules.controller.login;
 
 import com.khunboo.Base.BaseController;
+import com.khunboo.constant.ErrorCode;
 import com.khunboo.dto.LoginDto;
 import com.khunboo.modules.entity.SysUserEntity;
 import com.khunboo.modules.service.SysUserService;
@@ -24,13 +25,13 @@ public class LoginController extends BaseController {
 
         SysUserEntity sysUserEntity = sysUserService.getByAccount(account, password);
         if(sysUserEntity == null){
-            return new Result(201, "账号或者密码错误", null);
+            return new Result().error(201, ErrorCode.getValue(201));
         }
 
         LoginDto dto = ConvertUtils.sourceToTarget(sysUserEntity, LoginDto.class);
         //缓存用户数据
         sysUserService.cacheUser(dto, getHttpServletResponse(), getHttpServletRequest());
-        return new Result(200, "登录成功", null);
+        return new Result().success(200, "登录成功");
     }
 
 
@@ -39,6 +40,6 @@ public class LoginController extends BaseController {
 
         ValidatorUtils.validateEntity(loginDto);
         sysUserService.save(loginDto);
-        return new Result(200, "注册成功", null);
+        return new Result().success(200, "注册成功");
     }
 }

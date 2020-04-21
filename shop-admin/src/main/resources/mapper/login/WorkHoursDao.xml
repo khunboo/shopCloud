@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.khunboo.modules.dao.login.WorkHoursDao">
+
+    <resultMap id="sysUserLogin" type="com.khunboo.modules.entity.WorkHoursEntity">
+        <id column="id" property="id"/>
+        <result property="unitname" column="unitname"/>
+        <result property="workCount" column="work_count"/>
+        <result property="memberCount" column="member_count"/>
+        <result property="workTime" column="work_time"/>
+        <result property="workMoney" column="work_money"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createUser" column="create_user"/>
+    </resultMap>
+
+    <insert id="save" parameterType="com.khunboo.dto.WorkHoursDto">
+        insert into work_hours
+        (unitname,
+         work_count,
+         member_count,
+         work_time,
+         work_money,
+         create_time,
+         create_user)
+        values
+        (#{unitname},
+         #{workCount},
+         #{memberCount},
+         #{workTime},
+         #{workMoney},
+         #{createTime},
+         #{createUser}
+         )
+
+    </insert>
+</mapper>

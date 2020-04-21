@@ -26,7 +26,7 @@ public class TestRedisController {
         String key = "111";
         redisUtils.set(key, 222, -1L);
 
-        return new Result(0, "添加成功", "");
+        return new Result().success(0, "添加成功");
 
     }
 
@@ -36,7 +36,7 @@ public class TestRedisController {
         MessageProcessor processor = new MessageProcessor(1, "消息队列发送成功");
         rabbitSender.shopAdminMessage(processor);
 
-        return new Result(0, "消息发送成功", "");
+        return new Result().success(0, "添加成功");
 
     }
 
