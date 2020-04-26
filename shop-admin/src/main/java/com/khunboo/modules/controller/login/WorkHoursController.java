@@ -3,13 +3,13 @@ package com.khunboo.modules.controller.login;
 import com.khunboo.Base.BaseController;
 import com.khunboo.dto.WorkHoursDto;
 import com.khunboo.modules.service.WorkHoursService;
+import com.khunboo.page.PageData;
 import com.khunboo.utils.Result;
 import com.khunboo.utils.ValidatorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 
 @RestController
@@ -29,6 +29,15 @@ public class WorkHoursController extends BaseController {
 
         return new Result().success(200, "保存成功");
 
+    }
+
+
+    @GetMapping("/list")
+    public Result<PageData<WorkHoursDto>> getList(@RequestParam Map<String, Object> params){
+
+        PageData<WorkHoursDto> page = workHoursService.page(params);
+
+        return new Result<PageData<WorkHoursDto>>().success(page);
     }
 
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.khunboo.modules.dao.login.WorkHoursDao">
 
-    <resultMap id="sysUserLogin" type="com.khunboo.modules.entity.WorkHoursEntity">
+    <resultMap id="workhoursMap" type="com.khunboo.modules.entity.WorkHoursEntity">
         <id column="id" property="id"/>
         <result property="unitname" column="unitname"/>
         <result property="workCount" column="work_count"/>
@@ -33,4 +33,20 @@
          )
 
     </insert>
+
+    <select id="getPageList" resultMap="workhoursMap">
+        select unitname,
+            work_count,
+            member_count,
+            work_time,
+            work_money,
+            create_time,
+            create_user
+        from work_hours
+        where
+           1=1
+        <if test="unitname !='' and unitname !=null">
+            and unitname = #{unitname}
+        </if>
+    </select>
 </mapper>
