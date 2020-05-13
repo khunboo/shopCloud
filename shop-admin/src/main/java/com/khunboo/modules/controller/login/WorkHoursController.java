@@ -19,6 +19,11 @@ public class WorkHoursController extends BaseController {
     @Autowired
     private WorkHoursService workHoursService;
 
+    /**
+     * 新增工时数据
+     * @param workHoursDto
+     * @return
+     */
     @PostMapping("/save")
     public Result save(@RequestBody WorkHoursDto workHoursDto){
         /**
@@ -32,12 +37,27 @@ public class WorkHoursController extends BaseController {
     }
 
 
+    /**
+     * 获取工时数据
+     * @param params
+     * @return
+     */
     @GetMapping("/list")
     public Result<PageData<WorkHoursDto>> getList(@RequestParam Map<String, Object> params){
 
         PageData<WorkHoursDto> page = workHoursService.page(params);
 
         return new Result<PageData<WorkHoursDto>>().success(page);
+    }
+
+    /**
+     * 删除工时数据
+     */
+    @GetMapping("/delName")
+    public Result delName(@RequestParam("id") Integer id){
+
+        return new Result().success();
+
     }
 
 }

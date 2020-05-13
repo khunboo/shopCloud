@@ -41,4 +41,9 @@ public class WorkHoursImpl extends BaseServiceImpl<WorkHoursDao, WorkHoursEntity
         return getPageData(entityList, page.getTotal(), WorkHoursDto.class);
 
     }
+
+    @Override
+    public void delName(Integer id){
+
+    }
 }

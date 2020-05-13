@@ -35,7 +35,8 @@
     </insert>
 
     <select id="getPageList" resultMap="workhoursMap">
-        select unitname,
+        select id,
+            unitname,
             work_count,
             member_count,
             work_time,
@@ -49,4 +50,8 @@
             and unitname = #{unitname}
         </if>
     </select>
+
+    <delete id="delName">
+        delete from a
+    </delete>
 </mapper>

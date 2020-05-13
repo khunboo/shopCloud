@@ -13,4 +13,6 @@ public interface WorkHoursService extends BaseService<WorkHoursEntity> {
     void save(WorkHoursDto workHoursDto);
 
     PageData<WorkHoursDto> page(Map<String, Object> param);
+
+    void delName(Integer id);
 }

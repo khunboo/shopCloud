@@ -10,6 +10,8 @@ public class WorkHoursDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private int id;
+
     /**
      * 单位名称
      */
