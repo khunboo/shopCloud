@@ -39,7 +39,7 @@
         <fastjson.version>1.2.45</fastjson.version>
         <joda.time.version>2.9.9</joda.time.version>
         <hutool.version>4.1.8</hutool.version>
-        <jsoup.version>1.11.3</jsoup.version>
+        <jsoup.version>1.14.2</jsoup.version>
         <swagger.version>2.7.0</swagger.version>
         <lombok.version>1.18.4</lombok.version>
         <docker.plugin.version>1.2.0</docker.plugin.version>
